@@ -32,5 +32,16 @@ namespace Logica.Properties {
                 return ((string)(this["saludConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JULIAN-PC\\SQLEXPRESS;Initial Catalog=SaludValle;Integrated Security=T" +
+            "rue")]
+        public string SaludValleConnectionString {
+            get {
+                return ((string)(this["SaludValleConnectionString"]));
+            }
+        }
     }
 }

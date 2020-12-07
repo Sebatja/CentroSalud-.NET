@@ -11,7 +11,7 @@ namespace CentroSalud
 {
 
 
-    public partial class DashboardEnteSalud
+    public partial class Enfermedades
     {
 
         /// <summary>
@@ -24,13 +24,22 @@ namespace CentroSalud
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control TextNombreUsuario.
+        /// Control Label1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextNombreUsuario;
+        protected global::System.Web.UI.WebControls.Label Label1;
+
+        /// <summary>
+        /// Control ddlEnfermedad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlEnfermedad;
 
         /// <summary>
         /// Control Button1.
@@ -40,5 +49,14 @@ namespace CentroSalud
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+
+        /// <summary>
+        /// Control GvRecomendacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GvRecomendacion;
     }
 }

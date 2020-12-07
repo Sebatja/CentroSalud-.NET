@@ -70,6 +70,7 @@
     <Content Include="DashBoardAdmin.aspx" />
     <Content Include="DashboardEnteSalud.aspx" />
     <Content Include="DashboardPersonaComun.aspx" />
+    <Content Include="Enfermedades.aspx" />
     <Content Include="Global.asax" />
     <Content Include="registrar.aspx" />
     <Content Include="Web.config" />
@@ -96,6 +97,13 @@
     </Compile>
     <Compile Include="DashboardPersonaComun.aspx.designer.cs">
       <DependentUpon>DashboardPersonaComun.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enfermedades.aspx.cs">
+      <DependentUpon>Enfermedades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enfermedades.aspx.designer.cs">
+      <DependentUpon>Enfermedades.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -24,20 +24,24 @@ namespace CentroSalud
             person = clspersona.Login(int.Parse(TextCedula.Text),TextPassword.Text);
             if (person.cedula != 0)
             {
-                Session["idPersona"] = person.id_persona;
+                Session["idPersona"] = person.cedula;
                 Session["nombre"] = person.nombre;
                 Session["apellido"] = person.apellido;
+                Session["pepe"] = person.nombre;
+
                 if (person.id_rol == 1)
                 {
+                    Session["uno"] = 1;
                     Response.Redirect("DashBoardAdmin.aspx", false);
                 }
                 if (person.id_rol == 2)
                 {
-                    Response.Redirect("DashBoardPersonaComun.aspx", false);
+                    Response.Redirect("DashBoardEnteSalud.aspx", false);
+                 
                 }
                 if (person.id_rol == 3)
                 {
-                    Response.Redirect("DashBoardEnteSalud.aspx", false);
+                    Response.Redirect("DashBoardPersonaComun.aspx", false);
                 }
 
             }

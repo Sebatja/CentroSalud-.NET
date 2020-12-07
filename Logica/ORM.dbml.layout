@@ -1,142 +1,122 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 15.375" name="ORM">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.375" name="ORM">
   <DataContextMoniker Name="/ORMDataContext" />
   <nestedChildShapes>
-    <classShape Id="9654a99d-7e9c-473d-9c03-027a9835b567" absoluteBounds="9, 0.75, 2, 1.7708968098958331">
-      <DataClassMoniker Name="/ORMDataContext/citas" />
-      <nestedChildShapes>
-        <elementListCompartment Id="0fff20cb-b2cf-4277-aacb-bd273d4a0bce" absoluteBounds="9.015, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="e89417df-c2c7-4363-86f0-08ce1ebae828" absoluteBounds="3.75, 7.875, 2, 1.1939925130208318">
-      <DataClassMoniker Name="/ORMDataContext/sintoma" />
-      <nestedChildShapes>
-        <elementListCompartment Id="563e2cbb-15c5-48bd-9927-ea137e698878" absoluteBounds="3.765, 8.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="7bb1561f-3713-49b3-a876-5444dd68c818" absoluteBounds="0.75, 4, 2, 1.1939925130208335">
+    <classShape Id="dcc856a4-932c-455b-be0b-cc2206216634" absoluteBounds="0.75, 4.25, 2, 1.1939925130208344">
       <DataClassMoniker Name="/ORMDataContext/ciudad" />
       <nestedChildShapes>
-        <elementListCompartment Id="7b71328a-c898-45f8-8826-433c040fefd3" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="83f8ca09-ec37-4b0d-abfa-12c0e26b9503" absoluteBounds="0.765, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="fef39c6e-8826-4f01-ae2c-dcce06e27122" absoluteBounds="6.5, 7.625, 2, 1.7708968098958318">
+    <classShape Id="c57db878-ec5e-4198-9f81-66a45a5a083e" absoluteBounds="4.75, 7.875, 2, 1.1939925130208327">
+      <DataClassMoniker Name="/ORMDataContext/sintoma" />
+      <nestedChildShapes>
+        <elementListCompartment Id="12c32bc5-db6d-4d81-a927-e717474a20d2" absoluteBounds="4.765, 8.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="932b55f5-6e47-414f-b035-4df27c4f1c94" absoluteBounds="7.5, 7.625, 2, 1.5785953776041666">
       <DataClassMoniker Name="/ORMDataContext/enfermedad" />
       <nestedChildShapes>
-        <elementListCompartment Id="85e67398-7d3c-4dd6-a0e7-408fe8102c49" absoluteBounds="6.515, 8.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="39cd6896-4dc3-4a6c-bfec-d7e95bc7d8f8" absoluteBounds="7.515, 8.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="271e7702-0b65-4096-a8d5-218c23eefd90" absoluteBounds="3.5, 3.375, 2, 2.5401025390625">
+    <classShape Id="9472709a-54c7-4198-a67d-345e4071fcd4" absoluteBounds="3.5, 3.625, 2, 2.347801106770834">
       <DataClassMoniker Name="/ORMDataContext/ente_salud" />
       <nestedChildShapes>
-        <elementListCompartment Id="eff332fb-1c81-45c4-b704-229ed1a34e89" absoluteBounds="3.515, 3.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4116d518-b2fb-4514-9ec3-d9234c809279" absoluteBounds="3.515, 4.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1dec7d36-a22a-4e5e-9914-52f03097e5e9" absoluteBounds="9, 4, 2, 1.3862939453125005">
-      <DataClassMoniker Name="/ORMDataContext/especialidades" />
-      <nestedChildShapes>
-        <elementListCompartment Id="2f5f95aa-8cfe-46b2-abe6-b5e07e6685e9" absoluteBounds="9.015, 4.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="6b9019b8-0a2e-4c07-aa83-1cd302e9c2be" absoluteBounds="6.25, 3.625, 2, 1.9631982421875">
+    <classShape Id="de5492cf-aa94-4cc6-ac7f-62089bfec49a" absoluteBounds="6.25, 0.875, 2, 1.9631982421875003">
       <DataClassMoniker Name="/ORMDataContext/especialista" />
       <nestedChildShapes>
-        <elementListCompartment Id="a691178b-9ace-4b87-8cf1-b73223834220" absoluteBounds="6.265, 4.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="6b39748b-3c11-4c0f-9805-9d14f4a2c7b1" absoluteBounds="6.265, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2543b851-c64b-4849-9b20-b9ccfd03d99a" absoluteBounds="0.75, 7.5, 2, 2.3478011067708335">
+    <classShape Id="727fd07f-9482-45b2-b2c8-79c9e731ec8b" absoluteBounds="6.25, 4.125, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/ORMDataContext/generador_contenido" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56b7e4b2-d122-4c43-8da7-a5df1856babd" absoluteBounds="6.265, 4.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b300c314-4812-4657-904d-c25a81d4808f" absoluteBounds="0.75, 0.75, 2, 2.1554996744791666">
       <DataClassMoniker Name="/ORMDataContext/persona" />
       <nestedChildShapes>
-        <elementListCompartment Id="ff65c0bb-c441-484b-8d2a-def61dc6e5d3" absoluteBounds="0.765, 7.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5978ba78-25ec-4903-bc06-b6255051af30" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b33ceee7-fa6b-48cd-af8d-acc6b74fb203" absoluteBounds="3.75, 13.875, 2, 1.1939925130208344">
+    <classShape Id="b090fec5-96a0-4668-8f00-08629124c252" absoluteBounds="4.75, 9.875, 2, 1.1939925130208344">
       <DataClassMoniker Name="/ORMDataContext/recomendacion" />
       <nestedChildShapes>
-        <elementListCompartment Id="f10b25f4-f289-43db-a9c9-09353526b2ad" absoluteBounds="3.765, 14.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="5ccf2dda-372c-40de-9582-1819c5a184ce" absoluteBounds="4.765, 10.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cd4f55af-0ba0-4fe8-897b-29023e1e2484" absoluteBounds="1.5, 11, 2, 1.1939925130208344">
+    <classShape Id="d57657d9-2319-449d-906f-82b693866741" absoluteBounds="1.5, 7.75, 2, 1.1939925130208327">
       <DataClassMoniker Name="/ORMDataContext/rol" />
       <nestedChildShapes>
-        <elementListCompartment Id="55dcd4e2-269e-43d9-8fcb-ffb996dd8db2" absoluteBounds="1.5150000000000001, 11.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8396bfe9-901e-42bb-b0c6-e95a3daef692" absoluteBounds="1.5150000000000001, 8.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.75 : 8.47199625651042); (6.26041666666667 : 8.47199625651042 : JumpStart); (6.42708333333333 : 8.47199625651042 : JumpEnd); (6.5 : 8.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.75 : 8.47199625651042); (7.5 : 8.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ORMDataContext/sintoma/sintoma_enfermedad" />
       <nodes>
-        <classShapeMoniker Id="e89417df-c2c7-4363-86f0-08ce1ebae828" />
-        <classShapeMoniker Id="fef39c6e-8826-4f01-ae2c-dcce06e27122" />
+        <classShapeMoniker Id="c57db878-ec5e-4198-9f81-66a45a5a083e" />
+        <classShapeMoniker Id="932b55f5-6e47-414f-b035-4df27c4f1c94" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.04166666666667 : 4.59699625651042 : JumpStart); (3.20833333333333 : 4.59699625651042 : JumpEnd); (3.5 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.84699625651042); (3.19791666666667 : 4.84699625651042 : JumpStart); (3.36458333333333 : 4.84699625651042 : JumpEnd); (3.5 : 4.84699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ORMDataContext/ciudad/ciudad_ente_salud" />
       <nodes>
-        <classShapeMoniker Id="7bb1561f-3713-49b3-a876-5444dd68c818" />
-        <classShapeMoniker Id="271e7702-0b65-4096-a8d5-218c23eefd90" />
+        <classShapeMoniker Id="dcc856a4-932c-455b-be0b-cc2206216634" />
+        <classShapeMoniker Id="9472709a-54c7-4198-a67d-345e4071fcd4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.25 : 3.625); (7.25 : 1.63544840494792); (9 : 1.63544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/ORMDataContext/especialista/especialista_citas" />
-      <nodes>
-        <classShapeMoniker Id="6b9019b8-0a2e-4c07-aa83-1cd302e9c2be" />
-        <classShapeMoniker Id="9654a99d-7e9c-473d-9c03-027a9835b567" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 4.69314697265625); (9 : 4.69314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/ORMDataContext/especialista/especialista_especialidades" />
-      <nodes>
-        <classShapeMoniker Id="6b9019b8-0a2e-4c07-aa83-1cd302e9c2be" />
-        <classShapeMoniker Id="1dec7d36-a22a-4e5e-9914-52f03097e5e9" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.26724612825521); (3.04166666666667 : 4.26724612825521 : JumpStart); (3.20833333333333 : 4.26724612825521 : JumpEnd); (3.25 : 4.26724612825521); (3.25 : 3.125); (6.718748 : 3.125); (6.718748 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.25091745577925); (3.125 : 3.87591745577925); (3.125 : 1.85659912109375); (3.88541416666667 : 1.85659912109375 : JumpStart); (4.05208083333333 : 1.85659912109375 : JumpEnd); (6.25 : 1.85659912109375)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/ORMDataContext/ciudad/ciudad_especialista" />
       <nodes>
-        <classShapeMoniker Id="7bb1561f-3713-49b3-a876-5444dd68c818" />
-        <classShapeMoniker Id="6b9019b8-0a2e-4c07-aa83-1cd302e9c2be" />
+        <classShapeMoniker Id="dcc856a4-932c-455b-be0b-cc2206216634" />
+        <classShapeMoniker Id="de5492cf-aa94-4cc6-ac7f-62089bfec49a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.60659912109375); (6.25 : 4.60659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.5 : 3.625); (4.5 : 2.37865118164063); (6.25 : 2.37865118164063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ORMDataContext/ente_salud/ente_salud_especialista" />
       <nodes>
-        <classShapeMoniker Id="271e7702-0b65-4096-a8d5-218c23eefd90" />
-        <classShapeMoniker Id="6b9019b8-0a2e-4c07-aa83-1cd302e9c2be" />
+        <classShapeMoniker Id="9472709a-54c7-4198-a67d-345e4071fcd4" />
+        <classShapeMoniker Id="de5492cf-aa94-4cc6-ac7f-62089bfec49a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 7.50153746153846); (3.125 : 7.12653746153846); (3.125 : 2.10942460742187); (7.16666666666667 : 2.10942460742187 : JumpStart); (7.33333333333333 : 2.10942460742187 : JumpEnd); (9 : 2.10942460742187)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/ORMDataContext/persona/persona_citas" />
+    <associationConnector edgePoints="[(5.5 : 4.81814697265625); (6.25 : 4.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ORMDataContext/ente_salud/ente_salud_generador_contenido" />
       <nodes>
-        <classShapeMoniker Id="2543b851-c64b-4849-9b20-b9ccfd03d99a" />
-        <classShapeMoniker Id="9654a99d-7e9c-473d-9c03-027a9835b567" />
+        <classShapeMoniker Id="9472709a-54c7-4198-a67d-345e4071fcd4" />
+        <classShapeMoniker Id="727fd07f-9482-45b2-b2c8-79c9e731ec8b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 9.48964680989583); (3.59375 : 9.48964680989583); (3.59375 : 5.9151025390625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 1.30329956054688); (3.9687475 : 1.30329956054688); (3.9687475 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ORMDataContext/persona/persona_ente_salud" />
       <nodes>
-        <classShapeMoniker Id="2543b851-c64b-4849-9b20-b9ccfd03d99a" />
-        <classShapeMoniker Id="271e7702-0b65-4096-a8d5-218c23eefd90" />
+        <classShapeMoniker Id="b300c314-4812-4657-904d-c25a81d4808f" />
+        <classShapeMoniker Id="9472709a-54c7-4198-a67d-345e4071fcd4" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 9.69997645833333); (6.34375 : 9.69997645833333); (6.34375 : 5.5881982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/ORMDataContext/persona/persona_especialista" />
+    <associationConnector edgePoints="[(2.75 : 2.90549967447917); (3.125 : 3.28049967447917); (3.19791666666667 : 3.28049967447917 : JumpStart); (3.36458333333333 : 3.28049967447917 : JumpEnd); (3.88541416666667 : 3.28049967447917 : JumpStart); (4.05208083333333 : 3.28049967447917 : JumpEnd); (4.41666666666667 : 3.28049967447917 : JumpStart); (4.58333333333333 : 3.28049967447917 : JumpEnd); (7.25 : 3.28049967447917); (7.25 : 4.125)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ORMDataContext/persona/persona_generador_contenido" />
       <nodes>
-        <classShapeMoniker Id="2543b851-c64b-4849-9b20-b9ccfd03d99a" />
-        <classShapeMoniker Id="6b9019b8-0a2e-4c07-aa83-1cd302e9c2be" />
+        <classShapeMoniker Id="b300c314-4812-4657-904d-c25a81d4808f" />
+        <classShapeMoniker Id="727fd07f-9482-45b2-b2c8-79c9e731ec8b" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.75 : 14.4719962565104); (7.5 : 14.4719962565104); (7.5 : 9.39589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.75 : 10.4719962565104); (8.5 : 10.4719962565104); (8.5 : 9.20359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ORMDataContext/recomendacion/recomendacion_enfermedad" />
       <nodes>
-        <classShapeMoniker Id="b33ceee7-fa6b-48cd-af8d-acc6b74fb203" />
-        <classShapeMoniker Id="fef39c6e-8826-4f01-ae2c-dcce06e27122" />
+        <classShapeMoniker Id="b090fec5-96a0-4668-8f00-08629124c252" />
+        <classShapeMoniker Id="932b55f5-6e47-414f-b035-4df27c4f1c94" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.125 : 11); (2.125 : 9.84780110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(3.28125 : 7.75); (3.28125 : 2.34979689778646); (3.20833333333333 : 2.34979689778646 : JumpStart); (3.04166666666667 : 2.34979689778646 : JumpEnd); (2.75 : 2.34979689778646)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ORMDataContext/rol/rol_persona" />
       <nodes>
-        <classShapeMoniker Id="cd4f55af-0ba0-4fe8-897b-29023e1e2484" />
-        <classShapeMoniker Id="2543b851-c64b-4849-9b20-b9ccfd03d99a" />
+        <classShapeMoniker Id="d57657d9-2319-449d-906f-82b693866741" />
+        <classShapeMoniker Id="b300c314-4812-4657-904d-c25a81d4808f" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

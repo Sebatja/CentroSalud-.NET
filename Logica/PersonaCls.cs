@@ -22,7 +22,7 @@ namespace Logica
             persona objPersona = new persona();
             foreach (var item in personaLogin)
             {
-                objPersona.id_persona = item.id_persona;
+                objPersona.cedula = item.cedula;
                 objPersona.id_rol = item.id_rol;
                 objPersona.cedula = item.cedula;
                 objPersona.nombre = item.nombre;

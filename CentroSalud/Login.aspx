@@ -18,7 +18,7 @@
              <br/>
             <br/>
             <br/>
-            <asp:Button ID="LoginBtn" runat="server" Text="Login" OnClick="LoginBtn_Click" />
+            <asp:Button ID="LoginBtn" runat="server" Text="Login" OnClick="LoginBtn_Click" Width="114px" />
         </div>
     </form>
 </body>
