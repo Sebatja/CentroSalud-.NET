@@ -1,0 +1,7 @@
+C:\Users\usuario\source\repos\CentroSalud\Logica\bin\Debug\Logica.dll.config
+C:\Users\usuario\source\repos\CentroSalud\Logica\bin\Debug\Logica.dll
+C:\Users\usuario\source\repos\CentroSalud\Logica\bin\Debug\Logica.pdb
+C:\Users\usuario\source\repos\CentroSalud\Logica\obj\Debug\Logica.csprojAssemblyReference.cache
+C:\Users\usuario\source\repos\CentroSalud\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\usuario\source\repos\CentroSalud\Logica\obj\Debug\Logica.dll
+C:\Users\usuario\source\repos\CentroSalud\Logica\obj\Debug\Logica.pdb
