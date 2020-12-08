@@ -9,12 +9,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div style="height: 313px; width: 410px; margin-left: 5px">
             <asp:TextBox ID="TextCedula" runat="server"></asp:TextBox>
             <br/>
             <br/>
             <br/>
-            <asp:TextBox ID="TextPassword" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextPassword" runat="server" style="margin-left: 50px" Width="272px"></asp:TextBox>
              <br/>
             <br/>
             <br/>

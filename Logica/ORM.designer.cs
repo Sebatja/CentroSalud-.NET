@@ -30,15 +30,21 @@ namespace Logica
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnCreated();
-    partial void Insertciudad(ciudad instance);
-    partial void Updateciudad(ciudad instance);
-    partial void Deleteciudad(ciudad instance);
+    partial void Insertcita(cita instance);
+    partial void Updatecita(cita instance);
+    partial void Deletecita(cita instance);
     partial void Insertsintoma(sintoma instance);
     partial void Updatesintoma(sintoma instance);
     partial void Deletesintoma(sintoma instance);
+    partial void Insertciudad(ciudad instance);
+    partial void Updateciudad(ciudad instance);
+    partial void Deleteciudad(ciudad instance);
     partial void Insertenfermedad(enfermedad instance);
     partial void Updateenfermedad(enfermedad instance);
     partial void Deleteenfermedad(enfermedad instance);
+    partial void Insertenfermedad_sintoma(enfermedad_sintoma instance);
+    partial void Updateenfermedad_sintoma(enfermedad_sintoma instance);
+    partial void Deleteenfermedad_sintoma(enfermedad_sintoma instance);
     partial void Insertente_salud(ente_salud instance);
     partial void Updateente_salud(ente_salud instance);
     partial void Deleteente_salud(ente_salud instance);
@@ -60,7 +66,7 @@ namespace Logica
     #endregion
 		
 		public ORMDataContext() : 
-				base(global::Logica.Properties.Settings.Default.SaludValleConnectionString, mappingSource)
+				base(global::Logica.Properties.Settings.Default.SaludValleConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -89,11 +95,11 @@ namespace Logica
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<ciudad> ciudad
+		public System.Data.Linq.Table<cita> cita
 		{
 			get
 			{
-				return this.GetTable<ciudad>();
+				return this.GetTable<cita>();
 			}
 		}
 		
@@ -105,11 +111,27 @@ namespace Logica
 			}
 		}
 		
+		public System.Data.Linq.Table<ciudad> ciudad
+		{
+			get
+			{
+				return this.GetTable<ciudad>();
+			}
+		}
+		
 		public System.Data.Linq.Table<enfermedad> enfermedad
 		{
 			get
 			{
 				return this.GetTable<enfermedad>();
+			}
+		}
+		
+		public System.Data.Linq.Table<enfermedad_sintoma> enfermedad_sintoma
+		{
+			get
+			{
+				return this.GetTable<enfermedad_sintoma>();
 			}
 		}
 		
@@ -166,6 +188,408 @@ namespace Logica
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cedula, contrasenia);
 			return ((ISingleResult<sp_loginResult>)(result.ReturnValue));
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.cita")]
+	public partial class cita : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_cita;
+		
+		private int _id_persona;
+		
+		private int _id_especialista;
+		
+		private System.DateTime _fecha_cita;
+		
+		private System.TimeSpan _hora_cita;
+		
+		private System.Nullable<int> _calificacion;
+		
+		private string _estado;
+		
+		private EntityRef<especialista> _especialista;
+		
+		private EntityRef<persona> _persona;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_citaChanging(int value);
+    partial void Onid_citaChanged();
+    partial void Onid_personaChanging(int value);
+    partial void Onid_personaChanged();
+    partial void Onid_especialistaChanging(int value);
+    partial void Onid_especialistaChanged();
+    partial void Onfecha_citaChanging(System.DateTime value);
+    partial void Onfecha_citaChanged();
+    partial void Onhora_citaChanging(System.TimeSpan value);
+    partial void Onhora_citaChanged();
+    partial void OncalificacionChanging(System.Nullable<int> value);
+    partial void OncalificacionChanged();
+    partial void OnestadoChanging(string value);
+    partial void OnestadoChanged();
+    #endregion
+		
+		public cita()
+		{
+			this._especialista = default(EntityRef<especialista>);
+			this._persona = default(EntityRef<persona>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_cita", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int id_cita
+		{
+			get
+			{
+				return this._id_cita;
+			}
+			set
+			{
+				if ((this._id_cita != value))
+				{
+					this.Onid_citaChanging(value);
+					this.SendPropertyChanging();
+					this._id_cita = value;
+					this.SendPropertyChanged("id_cita");
+					this.Onid_citaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_persona", DbType="Int NOT NULL")]
+		public int id_persona
+		{
+			get
+			{
+				return this._id_persona;
+			}
+			set
+			{
+				if ((this._id_persona != value))
+				{
+					if (this._persona.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_personaChanging(value);
+					this.SendPropertyChanging();
+					this._id_persona = value;
+					this.SendPropertyChanged("id_persona");
+					this.Onid_personaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_especialista", DbType="Int NOT NULL")]
+		public int id_especialista
+		{
+			get
+			{
+				return this._id_especialista;
+			}
+			set
+			{
+				if ((this._id_especialista != value))
+				{
+					if (this._especialista.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_especialistaChanging(value);
+					this.SendPropertyChanging();
+					this._id_especialista = value;
+					this.SendPropertyChanged("id_especialista");
+					this.Onid_especialistaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha_cita", DbType="Date NOT NULL")]
+		public System.DateTime fecha_cita
+		{
+			get
+			{
+				return this._fecha_cita;
+			}
+			set
+			{
+				if ((this._fecha_cita != value))
+				{
+					this.Onfecha_citaChanging(value);
+					this.SendPropertyChanging();
+					this._fecha_cita = value;
+					this.SendPropertyChanged("fecha_cita");
+					this.Onfecha_citaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_hora_cita", DbType="Time NOT NULL")]
+		public System.TimeSpan hora_cita
+		{
+			get
+			{
+				return this._hora_cita;
+			}
+			set
+			{
+				if ((this._hora_cita != value))
+				{
+					this.Onhora_citaChanging(value);
+					this.SendPropertyChanging();
+					this._hora_cita = value;
+					this.SendPropertyChanged("hora_cita");
+					this.Onhora_citaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_calificacion", DbType="Int")]
+		public System.Nullable<int> calificacion
+		{
+			get
+			{
+				return this._calificacion;
+			}
+			set
+			{
+				if ((this._calificacion != value))
+				{
+					this.OncalificacionChanging(value);
+					this.SendPropertyChanging();
+					this._calificacion = value;
+					this.SendPropertyChanged("calificacion");
+					this.OncalificacionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this.OnestadoChanging(value);
+					this.SendPropertyChanging();
+					this._estado = value;
+					this.SendPropertyChanged("estado");
+					this.OnestadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="especialista_cita", Storage="_especialista", ThisKey="id_especialista", OtherKey="id_persona", IsForeignKey=true)]
+		public especialista especialista
+		{
+			get
+			{
+				return this._especialista.Entity;
+			}
+			set
+			{
+				especialista previousValue = this._especialista.Entity;
+				if (((previousValue != value) 
+							|| (this._especialista.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._especialista.Entity = null;
+						previousValue.cita.Remove(this);
+					}
+					this._especialista.Entity = value;
+					if ((value != null))
+					{
+						value.cita.Add(this);
+						this._id_especialista = value.id_persona;
+					}
+					else
+					{
+						this._id_especialista = default(int);
+					}
+					this.SendPropertyChanged("especialista");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="persona_cita", Storage="_persona", ThisKey="id_persona", OtherKey="cedula", IsForeignKey=true)]
+		public persona persona
+		{
+			get
+			{
+				return this._persona.Entity;
+			}
+			set
+			{
+				persona previousValue = this._persona.Entity;
+				if (((previousValue != value) 
+							|| (this._persona.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._persona.Entity = null;
+						previousValue.cita.Remove(this);
+					}
+					this._persona.Entity = value;
+					if ((value != null))
+					{
+						value.cita.Add(this);
+						this._id_persona = value.cedula;
+					}
+					else
+					{
+						this._id_persona = default(int);
+					}
+					this.SendPropertyChanged("persona");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.sintoma")]
+	public partial class sintoma : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_sintoma;
+		
+		private string _sintoma_texto;
+		
+		private EntitySet<enfermedad_sintoma> _enfermedad_sintoma;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_sintomaChanging(int value);
+    partial void Onid_sintomaChanged();
+    partial void Onsintoma_textoChanging(string value);
+    partial void Onsintoma_textoChanged();
+    #endregion
+		
+		public sintoma()
+		{
+			this._enfermedad_sintoma = new EntitySet<enfermedad_sintoma>(new Action<enfermedad_sintoma>(this.attach_enfermedad_sintoma), new Action<enfermedad_sintoma>(this.detach_enfermedad_sintoma));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_sintoma", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_sintoma
+		{
+			get
+			{
+				return this._id_sintoma;
+			}
+			set
+			{
+				if ((this._id_sintoma != value))
+				{
+					this.Onid_sintomaChanging(value);
+					this.SendPropertyChanging();
+					this._id_sintoma = value;
+					this.SendPropertyChanged("id_sintoma");
+					this.Onid_sintomaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sintoma_texto", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		public string sintoma_texto
+		{
+			get
+			{
+				return this._sintoma_texto;
+			}
+			set
+			{
+				if ((this._sintoma_texto != value))
+				{
+					this.Onsintoma_textoChanging(value);
+					this.SendPropertyChanging();
+					this._sintoma_texto = value;
+					this.SendPropertyChanged("sintoma_texto");
+					this.Onsintoma_textoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="sintoma_enfermedad_sintoma", Storage="_enfermedad_sintoma", ThisKey="id_sintoma", OtherKey="id_sintoma")]
+		public EntitySet<enfermedad_sintoma> enfermedad_sintoma
+		{
+			get
+			{
+				return this._enfermedad_sintoma;
+			}
+			set
+			{
+				this._enfermedad_sintoma.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_enfermedad_sintoma(enfermedad_sintoma entity)
+		{
+			this.SendPropertyChanging();
+			entity.sintoma = this;
+		}
+		
+		private void detach_enfermedad_sintoma(enfermedad_sintoma entity)
+		{
+			this.SendPropertyChanging();
+			entity.sintoma = null;
 		}
 	}
 	
@@ -311,120 +735,6 @@ namespace Logica
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.sintoma")]
-	public partial class sintoma : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _id_sintoma;
-		
-		private string _sintoma_texto;
-		
-		private EntitySet<enfermedad> _enfermedad;
-		
-    #region Definiciones de métodos de extensibilidad
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void Onid_sintomaChanging(int value);
-    partial void Onid_sintomaChanged();
-    partial void Onsintoma_textoChanging(string value);
-    partial void Onsintoma_textoChanged();
-    #endregion
-		
-		public sintoma()
-		{
-			this._enfermedad = new EntitySet<enfermedad>(new Action<enfermedad>(this.attach_enfermedad), new Action<enfermedad>(this.detach_enfermedad));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_sintoma", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id_sintoma
-		{
-			get
-			{
-				return this._id_sintoma;
-			}
-			set
-			{
-				if ((this._id_sintoma != value))
-				{
-					this.Onid_sintomaChanging(value);
-					this.SendPropertyChanging();
-					this._id_sintoma = value;
-					this.SendPropertyChanged("id_sintoma");
-					this.Onid_sintomaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_sintoma_texto", DbType="Text", UpdateCheck=UpdateCheck.Never)]
-		public string sintoma_texto
-		{
-			get
-			{
-				return this._sintoma_texto;
-			}
-			set
-			{
-				if ((this._sintoma_texto != value))
-				{
-					this.Onsintoma_textoChanging(value);
-					this.SendPropertyChanging();
-					this._sintoma_texto = value;
-					this.SendPropertyChanged("sintoma_texto");
-					this.Onsintoma_textoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="sintoma_enfermedad", Storage="_enfermedad", ThisKey="id_sintoma", OtherKey="id_sintoma")]
-		public EntitySet<enfermedad> enfermedad
-		{
-			get
-			{
-				return this._enfermedad;
-			}
-			set
-			{
-				this._enfermedad.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_enfermedad(enfermedad entity)
-		{
-			this.SendPropertyChanging();
-			entity.sintoma = this;
-		}
-		
-		private void detach_enfermedad(enfermedad entity)
-		{
-			this.SendPropertyChanging();
-			entity.sintoma = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.enfermedad")]
 	public partial class enfermedad : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -435,13 +745,9 @@ namespace Logica
 		
 		private string _nombre;
 		
-		private int _id_sintoma;
+		private EntitySet<enfermedad_sintoma> _enfermedad_sintoma;
 		
-		private System.Nullable<int> _id_recomendacion;
-		
-		private EntityRef<sintoma> _sintoma;
-		
-		private EntityRef<recomendacion> _recomendacion;
+		private EntitySet<recomendacion> _recomendacion;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -451,16 +757,12 @@ namespace Logica
     partial void Onid_enfermedadChanged();
     partial void OnnombreChanging(string value);
     partial void OnnombreChanged();
-    partial void Onid_sintomaChanging(int value);
-    partial void Onid_sintomaChanged();
-    partial void Onid_recomendacionChanging(System.Nullable<int> value);
-    partial void Onid_recomendacionChanged();
     #endregion
 		
 		public enfermedad()
 		{
-			this._sintoma = default(EntityRef<sintoma>);
-			this._recomendacion = default(EntityRef<recomendacion>);
+			this._enfermedad_sintoma = new EntitySet<enfermedad_sintoma>(new Action<enfermedad_sintoma>(this.attach_enfermedad_sintoma), new Action<enfermedad_sintoma>(this.detach_enfermedad_sintoma));
+			this._recomendacion = new EntitySet<recomendacion>(new Action<recomendacion>(this.attach_recomendacion), new Action<recomendacion>(this.detach_recomendacion));
 			OnCreated();
 		}
 		
@@ -504,6 +806,132 @@ namespace Logica
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="enfermedad_enfermedad_sintoma", Storage="_enfermedad_sintoma", ThisKey="id_enfermedad", OtherKey="id_enfermedad")]
+		public EntitySet<enfermedad_sintoma> enfermedad_sintoma
+		{
+			get
+			{
+				return this._enfermedad_sintoma;
+			}
+			set
+			{
+				this._enfermedad_sintoma.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="enfermedad_recomendacion", Storage="_recomendacion", ThisKey="id_enfermedad", OtherKey="id_enfermedad")]
+		public EntitySet<recomendacion> recomendacion
+		{
+			get
+			{
+				return this._recomendacion;
+			}
+			set
+			{
+				this._recomendacion.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_enfermedad_sintoma(enfermedad_sintoma entity)
+		{
+			this.SendPropertyChanging();
+			entity.enfermedad = this;
+		}
+		
+		private void detach_enfermedad_sintoma(enfermedad_sintoma entity)
+		{
+			this.SendPropertyChanging();
+			entity.enfermedad = null;
+		}
+		
+		private void attach_recomendacion(recomendacion entity)
+		{
+			this.SendPropertyChanging();
+			entity.enfermedad = this;
+		}
+		
+		private void detach_recomendacion(recomendacion entity)
+		{
+			this.SendPropertyChanging();
+			entity.enfermedad = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.enfermedad_sintoma")]
+	public partial class enfermedad_sintoma : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id_ES;
+		
+		private int _id_sintoma;
+		
+		private int _id_enfermedad;
+		
+		private EntityRef<enfermedad> _enfermedad;
+		
+		private EntityRef<sintoma> _sintoma;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onid_ESChanging(int value);
+    partial void Onid_ESChanged();
+    partial void Onid_sintomaChanging(int value);
+    partial void Onid_sintomaChanged();
+    partial void Onid_enfermedadChanging(int value);
+    partial void Onid_enfermedadChanged();
+    #endregion
+		
+		public enfermedad_sintoma()
+		{
+			this._enfermedad = default(EntityRef<enfermedad>);
+			this._sintoma = default(EntityRef<sintoma>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_ES", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id_ES
+		{
+			get
+			{
+				return this._id_ES;
+			}
+			set
+			{
+				if ((this._id_ES != value))
+				{
+					this.Onid_ESChanging(value);
+					this.SendPropertyChanging();
+					this._id_ES = value;
+					this.SendPropertyChanged("id_ES");
+					this.Onid_ESChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_sintoma", DbType="Int NOT NULL")]
 		public int id_sintoma
 		{
@@ -528,31 +956,65 @@ namespace Logica
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_recomendacion", DbType="Int")]
-		public System.Nullable<int> id_recomendacion
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_enfermedad", DbType="Int NOT NULL")]
+		public int id_enfermedad
 		{
 			get
 			{
-				return this._id_recomendacion;
+				return this._id_enfermedad;
 			}
 			set
 			{
-				if ((this._id_recomendacion != value))
+				if ((this._id_enfermedad != value))
 				{
-					if (this._recomendacion.HasLoadedOrAssignedValue)
+					if (this._enfermedad.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.Onid_recomendacionChanging(value);
+					this.Onid_enfermedadChanging(value);
 					this.SendPropertyChanging();
-					this._id_recomendacion = value;
-					this.SendPropertyChanged("id_recomendacion");
-					this.Onid_recomendacionChanged();
+					this._id_enfermedad = value;
+					this.SendPropertyChanged("id_enfermedad");
+					this.Onid_enfermedadChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="sintoma_enfermedad", Storage="_sintoma", ThisKey="id_sintoma", OtherKey="id_sintoma", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="enfermedad_enfermedad_sintoma", Storage="_enfermedad", ThisKey="id_enfermedad", OtherKey="id_enfermedad", IsForeignKey=true)]
+		public enfermedad enfermedad
+		{
+			get
+			{
+				return this._enfermedad.Entity;
+			}
+			set
+			{
+				enfermedad previousValue = this._enfermedad.Entity;
+				if (((previousValue != value) 
+							|| (this._enfermedad.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._enfermedad.Entity = null;
+						previousValue.enfermedad_sintoma.Remove(this);
+					}
+					this._enfermedad.Entity = value;
+					if ((value != null))
+					{
+						value.enfermedad_sintoma.Add(this);
+						this._id_enfermedad = value.id_enfermedad;
+					}
+					else
+					{
+						this._id_enfermedad = default(int);
+					}
+					this.SendPropertyChanged("enfermedad");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="sintoma_enfermedad_sintoma", Storage="_sintoma", ThisKey="id_sintoma", OtherKey="id_sintoma", IsForeignKey=true)]
 		public sintoma sintoma
 		{
 			get
@@ -569,12 +1031,12 @@ namespace Logica
 					if ((previousValue != null))
 					{
 						this._sintoma.Entity = null;
-						previousValue.enfermedad.Remove(this);
+						previousValue.enfermedad_sintoma.Remove(this);
 					}
 					this._sintoma.Entity = value;
 					if ((value != null))
 					{
-						value.enfermedad.Add(this);
+						value.enfermedad_sintoma.Add(this);
 						this._id_sintoma = value.id_sintoma;
 					}
 					else
@@ -582,40 +1044,6 @@ namespace Logica
 						this._id_sintoma = default(int);
 					}
 					this.SendPropertyChanged("sintoma");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="recomendacion_enfermedad", Storage="_recomendacion", ThisKey="id_recomendacion", OtherKey="id_recomendacion", IsForeignKey=true)]
-		public recomendacion recomendacion
-		{
-			get
-			{
-				return this._recomendacion.Entity;
-			}
-			set
-			{
-				recomendacion previousValue = this._recomendacion.Entity;
-				if (((previousValue != value) 
-							|| (this._recomendacion.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._recomendacion.Entity = null;
-						previousValue.enfermedad.Remove(this);
-					}
-					this._recomendacion.Entity = value;
-					if ((value != null))
-					{
-						value.enfermedad.Add(this);
-						this._id_recomendacion = value.id_recomendacion;
-					}
-					else
-					{
-						this._id_recomendacion = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("recomendacion");
 				}
 			}
 		}
@@ -1027,6 +1455,8 @@ namespace Logica
 		
 		private string _especialidad;
 		
+		private EntitySet<cita> _cita;
+		
 		private EntityRef<ciudad> _ciudad;
 		
 		private EntityRef<ente_salud> _ente_salud;
@@ -1051,6 +1481,7 @@ namespace Logica
 		
 		public especialista()
 		{
+			this._cita = new EntitySet<cita>(new Action<cita>(this.attach_cita), new Action<cita>(this.detach_cita));
 			this._ciudad = default(EntityRef<ciudad>);
 			this._ente_salud = default(EntityRef<ente_salud>);
 			OnCreated();
@@ -1184,6 +1615,19 @@ namespace Logica
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="especialista_cita", Storage="_cita", ThisKey="id_persona", OtherKey="id_especialista")]
+		public EntitySet<cita> cita
+		{
+			get
+			{
+				return this._cita;
+			}
+			set
+			{
+				this._cita.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ciudad_especialista", Storage="_ciudad", ThisKey="id_ciudad", OtherKey="id_ciudad", IsForeignKey=true)]
 		public ciudad ciudad
 		{
@@ -1270,6 +1714,18 @@ namespace Logica
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_cita(cita entity)
+		{
+			this.SendPropertyChanging();
+			entity.especialista = this;
+		}
+		
+		private void detach_cita(cita entity)
+		{
+			this.SendPropertyChanging();
+			entity.especialista = null;
 		}
 	}
 	
@@ -1485,6 +1941,8 @@ namespace Logica
 		
 		private string _password;
 		
+		private EntitySet<cita> _cita;
+		
 		private EntityRef<ente_salud> _ente_salud;
 		
 		private EntitySet<generador_contenido> _generador_contenido;
@@ -1513,6 +1971,7 @@ namespace Logica
 		
 		public persona()
 		{
+			this._cita = new EntitySet<cita>(new Action<cita>(this.attach_cita), new Action<cita>(this.detach_cita));
 			this._ente_salud = default(EntityRef<ente_salud>);
 			this._generador_contenido = new EntitySet<generador_contenido>(new Action<generador_contenido>(this.attach_generador_contenido), new Action<generador_contenido>(this.detach_generador_contenido));
 			this._rol = default(EntityRef<rol>);
@@ -1663,6 +2122,19 @@ namespace Logica
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="persona_cita", Storage="_cita", ThisKey="cedula", OtherKey="id_persona")]
+		public EntitySet<cita> cita
+		{
+			get
+			{
+				return this._cita;
+			}
+			set
+			{
+				this._cita.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="persona_ente_salud", Storage="_ente_salud", ThisKey="cedula", OtherKey="id_persona", IsUnique=true, IsForeignKey=false)]
 		public ente_salud ente_salud
 		{
@@ -1759,6 +2231,18 @@ namespace Logica
 			}
 		}
 		
+		private void attach_cita(cita entity)
+		{
+			this.SendPropertyChanging();
+			entity.persona = this;
+		}
+		
+		private void detach_cita(cita entity)
+		{
+			this.SendPropertyChanging();
+			entity.persona = null;
+		}
+		
 		private void attach_generador_contenido(generador_contenido entity)
 		{
 			this.SendPropertyChanging();
@@ -1782,7 +2266,9 @@ namespace Logica
 		
 		private string _recomendacion_texto;
 		
-		private EntitySet<enfermedad> _enfermedad;
+		private int _id_enfermedad;
+		
+		private EntityRef<enfermedad> _enfermedad;
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnLoaded();
@@ -1792,11 +2278,13 @@ namespace Logica
     partial void Onid_recomendacionChanged();
     partial void Onrecomendacion_textoChanging(string value);
     partial void Onrecomendacion_textoChanged();
+    partial void Onid_enfermedadChanging(int value);
+    partial void Onid_enfermedadChanged();
     #endregion
 		
 		public recomendacion()
 		{
-			this._enfermedad = new EntitySet<enfermedad>(new Action<enfermedad>(this.attach_enfermedad), new Action<enfermedad>(this.detach_enfermedad));
+			this._enfermedad = default(EntityRef<enfermedad>);
 			OnCreated();
 		}
 		
@@ -1820,7 +2308,7 @@ namespace Logica
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_recomendacion_texto", DbType="Text", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_recomendacion_texto", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
 		public string recomendacion_texto
 		{
 			get
@@ -1840,16 +2328,61 @@ namespace Logica
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="recomendacion_enfermedad", Storage="_enfermedad", ThisKey="id_recomendacion", OtherKey="id_recomendacion")]
-		public EntitySet<enfermedad> enfermedad
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_enfermedad", DbType="Int NOT NULL")]
+		public int id_enfermedad
 		{
 			get
 			{
-				return this._enfermedad;
+				return this._id_enfermedad;
 			}
 			set
 			{
-				this._enfermedad.Assign(value);
+				if ((this._id_enfermedad != value))
+				{
+					if (this._enfermedad.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_enfermedadChanging(value);
+					this.SendPropertyChanging();
+					this._id_enfermedad = value;
+					this.SendPropertyChanged("id_enfermedad");
+					this.Onid_enfermedadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="enfermedad_recomendacion", Storage="_enfermedad", ThisKey="id_enfermedad", OtherKey="id_enfermedad", IsForeignKey=true)]
+		public enfermedad enfermedad
+		{
+			get
+			{
+				return this._enfermedad.Entity;
+			}
+			set
+			{
+				enfermedad previousValue = this._enfermedad.Entity;
+				if (((previousValue != value) 
+							|| (this._enfermedad.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._enfermedad.Entity = null;
+						previousValue.recomendacion.Remove(this);
+					}
+					this._enfermedad.Entity = value;
+					if ((value != null))
+					{
+						value.recomendacion.Add(this);
+						this._id_enfermedad = value.id_enfermedad;
+					}
+					else
+					{
+						this._id_enfermedad = default(int);
+					}
+					this.SendPropertyChanged("enfermedad");
+				}
 			}
 		}
 		
@@ -1871,18 +2404,6 @@ namespace Logica
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_enfermedad(enfermedad entity)
-		{
-			this.SendPropertyChanging();
-			entity.recomendacion = this;
-		}
-		
-		private void detach_enfermedad(enfermedad entity)
-		{
-			this.SendPropertyChanging();
-			entity.recomendacion = null;
 		}
 	}
 	
