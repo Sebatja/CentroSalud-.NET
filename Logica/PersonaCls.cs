@@ -15,6 +15,24 @@ namespace Logica
             BD.SubmitChanges();
                 
         }
+
+        public persona checkUser(int cedula)
+        {
+            ORMDataContext BD = new ORMDataContext();
+            var personaCheck = BD.sp_checkUser(cedula);
+            persona objPersona = new persona();
+            foreach (var item in personaCheck)
+            {
+                objPersona.cedula = item.cedula;
+                objPersona.id_rol = item.id_rol;
+                objPersona.cedula = item.cedula;
+                objPersona.nombre = item.nombre;
+                objPersona.apellido = item.correo;
+                objPersona.correo = item.correo;
+                objPersona.cedula = item.cedula;
+            }
+            return objPersona;
+        }
         public persona Login(int cedula,string password)
         {
             ORMDataContext BD = new ORMDataContext();

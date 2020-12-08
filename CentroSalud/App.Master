@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="App.Master.cs" Inherits="CentroSalud.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true"  CodeBehind="App.Master.cs" Inherits="CentroSalud.Site1" %>
 
 <!DOCTYPE html>
 
@@ -19,15 +19,17 @@
 <body>
 
     <nav class="navbar navbar-dark bg-info">
-        <div class="container">
+        <div class="container displayRowCC">
             <a class="navbar-brand displayRowSbC" href="#" style="width: 24%;">
                 <img src="img/SaludValleLogo.png" alt="" width="40" height="40" class="d-inline-block align-top mr-2 img-logo">
                 <div>Servicio de salud del Valle</div>
             </a>
-            <asp:ContentPlaceHolder ID="lateral" runat="server"></asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="lateral" runat="server">
+                
+            </asp:ContentPlaceHolder>
         </div>
     </nav>
-    <div class="container">
+    <div>
         <asp:ContentPlaceHolder ID="content" runat="server">
         </asp:ContentPlaceHolder>
     </div>

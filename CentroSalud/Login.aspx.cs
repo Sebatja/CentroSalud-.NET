@@ -37,10 +37,11 @@ namespace CentroSalud
                 if (person.id_rol == 2)
                 {
                     Response.Redirect("DashBoardEnteSalud.aspx", false);
-                 
+                    Response.Close();
                 }
-                if (person.id_rol == 3)
+                if (person.id_rol == 4)
                 {
+                    Response.Close();
                     Response.Redirect("DashBoardPersonaComun.aspx", false);
                 }
 

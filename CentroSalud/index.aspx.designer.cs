@@ -11,7 +11,7 @@ namespace CentroSalud
 {
 
 
-    public partial class registrar
+    public partial class index
     {
 
         /// <summary>

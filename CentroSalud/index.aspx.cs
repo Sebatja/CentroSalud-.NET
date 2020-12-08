@@ -8,7 +8,7 @@ using Logica;
 
 namespace CentroSalud
 {
-    public partial class registrar : System.Web.UI.Page
+    public partial class index : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -17,7 +17,7 @@ namespace CentroSalud
 
             ddlCuidad.DataSource = cuidadDAO.ConsultarTodos();
             ddlCuidad.DataValueField = "id_ciudad";
-            ddlCuidad.DataTextField ="ciudad1";
+            ddlCuidad.DataTextField = "ciudad1";
             ddlCuidad.DataBind();
 
             ClsCuidadDAO cuidadDAOE = new ClsCuidadDAO();
@@ -57,6 +57,13 @@ namespace CentroSalud
                 personaDTO.password = TextPassword.Text;
                 personaDTO.id_rol = 4; // Rol entidad de salud
                 personaDAO.RegistrarPersona(personaDTO);
+
+                TextCelular.Text = "";
+                TextApellido.Text = "";
+                TextNombre.Text = "";
+                TextCedula.Text = "";
+                TextPassword.Text = "";
+                TextCorreo.Text = "";
             }
             if (int.Parse(TipoDeRol.SelectedValue.ToString()) == 2)
             {
@@ -177,7 +184,6 @@ namespace CentroSalud
                 Page.RegisterStartupScript("script", "<script languaje=JavaScript>alert('Datos incorrectos')</script>");
             }
         }
-
 
     }
 }
