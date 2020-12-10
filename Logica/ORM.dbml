@@ -1,5 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SaludValle" Class="ORMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=JULIAN-PC\SQLEXPRESS;Initial Catalog=SaludValle;Integrated Security=True" SettingsObjectName="Logica.Properties.Settings" SettingsPropertyName="SaludValleConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.cita" Member="cita">
+    <Type Name="cita">
+      <Column Name="id_cita" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="id_persona" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_especialista" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha_cita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="hora_cita" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="calificacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="estado" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="especialista_cita" Member="especialista" ThisKey="id_especialista" OtherKey="id_persona" Type="especialista" IsForeignKey="true" />
+      <Association Name="persona_cita" Member="persona" ThisKey="id_persona" OtherKey="cedula" Type="persona" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sintoma" Member="sintoma">
+    <Type Name="sintoma">
+      <Column Name="id_sintoma" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sintoma_texto" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="sintoma_enfermedad_sintoma" Member="enfermedad_sintoma" ThisKey="id_sintoma" OtherKey="id_sintoma" Type="enfermedad_sintoma" />
+    </Type>
+  </Table>
   <Table Name="dbo.ciudad" Member="ciudad">
     <Type Name="ciudad">
       <Column Name="id_ciudad" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -8,21 +28,21 @@
       <Association Name="ciudad_especialista" Member="especialista" ThisKey="id_ciudad" OtherKey="id_ciudad" Type="especialista" />
     </Type>
   </Table>
-  <Table Name="dbo.sintoma" Member="sintoma">
-    <Type Name="sintoma">
-      <Column Name="id_sintoma" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="sintoma_texto" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="sintoma_enfermedad" Member="enfermedad" ThisKey="id_sintoma" OtherKey="id_sintoma" Type="enfermedad" />
-    </Type>
-  </Table>
   <Table Name="dbo.enfermedad" Member="enfermedad">
     <Type Name="enfermedad">
       <Column Name="id_enfermedad" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="nombre" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="enfermedad_enfermedad_sintoma" Member="enfermedad_sintoma" ThisKey="id_enfermedad" OtherKey="id_enfermedad" Type="enfermedad_sintoma" />
+      <Association Name="enfermedad_recomendacion" Member="recomendacion" ThisKey="id_enfermedad" OtherKey="id_enfermedad" Type="recomendacion" />
+    </Type>
+  </Table>
+  <Table Name="dbo.enfermedad_sintoma" Member="enfermedad_sintoma">
+    <Type Name="enfermedad_sintoma">
+      <Column Name="id_ES" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="id_sintoma" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_recomendacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="sintoma_enfermedad" Member="sintoma" ThisKey="id_sintoma" OtherKey="id_sintoma" Type="sintoma" IsForeignKey="true" />
-      <Association Name="recomendacion_enfermedad" Member="recomendacion" ThisKey="id_recomendacion" OtherKey="id_recomendacion" Type="recomendacion" IsForeignKey="true" />
+      <Column Name="id_enfermedad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="enfermedad_enfermedad_sintoma" Member="enfermedad" ThisKey="id_enfermedad" OtherKey="id_enfermedad" Type="enfermedad" IsForeignKey="true" />
+      <Association Name="sintoma_enfermedad_sintoma" Member="sintoma" ThisKey="id_sintoma" OtherKey="id_sintoma" Type="sintoma" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ente_salud" Member="ente_salud">
@@ -49,6 +69,7 @@
       <Column Name="numero_de_licencia_de_salud" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="fecha_de_expedicion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="especialidad" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="especialista_cita" Member="cita" ThisKey="id_persona" OtherKey="id_especialista" Type="cita" />
       <Association Name="ciudad_especialista" Member="ciudad" ThisKey="id_ciudad" OtherKey="id_ciudad" Type="ciudad" IsForeignKey="true" />
       <Association Name="ente_salud_especialista" Member="ente_salud" ThisKey="id_ente_salud" OtherKey="id_persona" Type="ente_salud" IsForeignKey="true" />
     </Type>
@@ -71,6 +92,7 @@
       <Column Name="correo" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="celular" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="password" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="persona_cita" Member="cita" ThisKey="cedula" OtherKey="id_persona" Type="cita" />
       <Association Name="persona_ente_salud" Member="ente_salud" ThisKey="cedula" OtherKey="id_persona" Type="ente_salud" Cardinality="One" />
       <Association Name="persona_generador_contenido" Member="generador_contenido" ThisKey="cedula" OtherKey="id_persona" Type="generador_contenido" />
       <Association Name="rol_persona" Member="rol" ThisKey="id_rol" OtherKey="id_rol" Type="rol" IsForeignKey="true" />
@@ -79,8 +101,9 @@
   <Table Name="dbo.recomendacion" Member="recomendacion">
     <Type Name="recomendacion">
       <Column Name="id_recomendacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="recomendacion_texto" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
-      <Association Name="recomendacion_enfermedad" Member="enfermedad" ThisKey="id_recomendacion" OtherKey="id_recomendacion" Type="enfermedad" />
+      <Column Name="recomendacion_texto" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="id_enfermedad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="enfermedad_recomendacion" Member="enfermedad" ThisKey="id_enfermedad" OtherKey="id_enfermedad" Type="enfermedad" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.rol" Member="rol">

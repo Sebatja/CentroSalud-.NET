@@ -15,7 +15,7 @@ namespace Logica
                    select new
                    {
                        nombre = per.nombre,
-                       id_sintoma = per.id_sintoma
+                       id_sintoma = per.id_enfermedad
                    }
                    ;
         }

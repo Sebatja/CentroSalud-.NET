@@ -12,7 +12,7 @@ namespace Logica
         {
             ORMDataContext BD = new ORMDataContext();
             return from per in BD.recomendacion
-                   where per.id_recomendacion == id
+                   where per.id_enfermedad == id
                    select per
                   
                    
