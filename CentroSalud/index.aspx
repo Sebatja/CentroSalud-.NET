@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com"/>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/11c72a119e.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="js/Alertas.js"></script>
 </head>
 <body>
     <div class="container">

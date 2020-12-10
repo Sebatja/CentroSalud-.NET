@@ -10,7 +10,7 @@
             <span class="input-group-text" id="basic-addon2"><i class="fas fa-lock"></i></span>
             <asp:TextBox ID="TextPassword" runat="server" CssClass="form-control" type="password" placeholder="Contraseña" aria-describedby="basic-addon2"></asp:TextBox>
         </div>
-        <asp:Button ID="LoginBtn" CssClass="btn btn-outline-success" runat="server" Text="Ingresar" OnClick="LoginBtn_Click"/>
+        <asp:Button ID="LoginBtn" CssClass="btn btn-outline-success text-light" runat="server" Text="Ingresar" OnClick="LoginBtn_Click"/>
     </form>
 </asp:Content>
 

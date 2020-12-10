@@ -21,11 +21,11 @@ namespace CentroSalud
 
             PersonaCls clspersona = new PersonaCls();
             persona person = new persona();
-            person = clspersona.Login(int.Parse(TextCedula.Text),TextPassword.Text);
+            person = clspersona.Login(int.Parse(TextCedula.Text), TextPassword.Text);
             if (person.cedula != 0)
             {
                 Session["idPersona"] = person.cedula;
-                Session["nombre"] = person.nombre;
+                Session["nombre"] = person.nombre + " (" +person.apellido + ")";
                 Session["apellido"] = person.apellido;
                 Session["pepe"] = person.nombre;
 
@@ -48,7 +48,7 @@ namespace CentroSalud
             }
             else
             {
-                Page.RegisterStartupScript("script", "<script languaje=JavaScript>alert('Datos incorrectos')</script>");
+                Page.RegisterStartupScript("script", "<script languaje=JavaScript>AlertaPopUp('Datos incorrectos','La información suministrada no concuerda con nuestros registros, por favor valide la información e intente nuevamente.','error');</script>");
             }
         }
     }

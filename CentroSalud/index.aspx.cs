@@ -140,7 +140,7 @@ namespace CentroSalud
 
             }
 
-            Page.RegisterStartupScript("script", "<script languaje=JavaScript>alert('Se ha registrado un nuevo usuario')</script>");
+            Page.RegisterStartupScript("script", "<script languaje=JavaScript>AlertaToast('Registro exitoso','success');</script>");
 
         }
 

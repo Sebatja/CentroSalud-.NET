@@ -12,13 +12,7 @@ namespace CentroSalud
         protected void Page_Load(object sender, EventArgs e)
         {
           
-          
-            
-            LabelUsuario.Text = "Perreo hp";
-            TextUsuario.Text = "Perreo hp";
-
-            TextTexto.Text = "hola mundo";
-            LblBienvenido.Text = "bIENVENIDO XD" + Session["pepe"] ;
+            LblBienvenido.Text = "Bienvenido " + Session["nombre"] ;
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)

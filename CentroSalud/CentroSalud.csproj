@@ -88,6 +88,7 @@
     <Content Include="Global.asax" />
     <Content Include="img\SaludValleLogo.png" />
     <Content Include="index.aspx" />
+    <Content Include="js\Alertas.js" />
     <Content Include="registrar.aspx" />
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />

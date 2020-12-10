@@ -14,19 +14,25 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/11c72a119e.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="js/Alertas.js"></script>
     </asp:ContentPlaceHolder>
 </head>
 <body>
 
-    <nav class="navbar navbar-dark bg-info">
+    <nav class="navbar navbar-dark navbar-expand-lg bg-info sticky-top">
         <div class="container displayRowCC">
             <a class="navbar-brand displayRowSbC" href="#" style="width: 24%;">
-                <img src="img/SaludValleLogo.png" alt="" width="40" height="40" class="d-inline-block align-top mr-2 img-logo">
+                <img src="img/SaludValleLogo.png" alt="" width="40" height="40" class="d-inline-block align-top me-2 img-logo">
                 <div>Servicio de salud del Valle</div>
             </a>
-            <asp:ContentPlaceHolder ID="lateral" runat="server">
-                
-            </asp:ContentPlaceHolder>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <asp:ContentPlaceHolder ID="lateral" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
         </div>
     </nav>
     <div>
