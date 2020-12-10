@@ -15,7 +15,7 @@ namespace CentroSalud
             ClsEnfermedadDAO enfermedadDAO = new ClsEnfermedadDAO();
 
             ddlEnfermedad.DataSource = enfermedadDAO.ConsultarTodos();
-            ddlEnfermedad.DataValueField = "id_sintoma";
+            ddlEnfermedad.DataValueField = "id_enfermedad";
             ddlEnfermedad.DataTextField = "nombre";
             ddlEnfermedad.DataBind();
         }

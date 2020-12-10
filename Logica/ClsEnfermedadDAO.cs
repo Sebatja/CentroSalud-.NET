@@ -12,11 +12,7 @@ namespace Logica
         {
             ORMDataContext BD = new ORMDataContext();
             return from per in BD.enfermedad
-                   select new
-                   {
-                       nombre = per.nombre,
-                       id_sintoma = per.id_enfermedad
-                   }
+                   select per;
                    ;
         }
     }

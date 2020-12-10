@@ -27,7 +27,9 @@ namespace Logica
                    {
                       cita = per.id_cita,
                       hora =  per.hora_cita,
-                      Dia = per.fecha_cita
+                      Dia = per.fecha_cita,
+                      especialidad = per.especialista.especialidad,
+                      entidad = per.especialista.ente_salud.sitio_web
                     
                    }
                    ;

@@ -79,7 +79,6 @@ namespace CentroSalud
             if (e.CommandName == "Asignar")
             {
                
-             TextPruebecita.Text = dvcitasEspe.Rows[rowIndex].Cells[1].Text;
                 ClsCitaDAO citaDao = new ClsCitaDAO();
                 citaDao.AsignarCita(int.Parse(dvcitasEspe.Rows[rowIndex].Cells[1].Text),Session["idPersona"].ToString());
             }

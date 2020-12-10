@@ -39,6 +39,7 @@ namespace CentroSalud
         {
             ClsCitaDAO citaDao = new ClsCitaDAO();
             citaDao.CalificarCita(int.Parse(TextCita.Text),TextCalificacion.Text);
+            Page.RegisterStartupScript("script", "<script languaje=JavaScript>alert('Calificaion exitosa')</script>");
         }
     }
 }

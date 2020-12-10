@@ -20,6 +20,7 @@
                     <asp:BoundField DataField="cita" HeaderText="Cita" />
                     <asp:BoundField DataField="hora" HeaderText="Hora" />
                     <asp:BoundField DataField="Dia" HeaderText="Dia" />
+                    <asp:BoundField DataField="boca" HeaderText="Especialidad" />
                 </Columns>
             </asp:GridView>
         </div>

@@ -20,6 +20,8 @@ namespace CentroSalud
         private void ConsultarEspecialistas()
         {
             ClsCitaDAO citaDAO = new ClsCitaDAO();
+            //2312314
+            //gvMiscitas.DataSource = citaDAO.MisCitasEspecialista(Session["idPersona"].ToString());
             gvMiscitas.DataSource = citaDAO.MisCitasEspecialista(Session["idPersona"].ToString());
             gvMiscitas.DataBind();//Monstrar Datos
         }
@@ -33,7 +35,10 @@ namespace CentroSalud
             if (e.CommandName == "Finalizar")
             {
                 ClsCitaDAO citaDao = new ClsCitaDAO();
-                citaDao.FinalidadCita(int.Parse(gvMiscitas.Rows[rowIndex].Cells[1].Text));
+                //2312314
+                    citaDao.FinalidadCita(int.Parse(gvMiscitas.Rows[rowIndex].Cells[1].Text));
+                Page.RegisterStartupScript("script", "<script languaje=JavaScript>alert('Cita Finalizada')</script>");
+
             }
         }
 

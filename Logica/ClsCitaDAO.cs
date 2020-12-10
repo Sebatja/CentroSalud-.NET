@@ -35,7 +35,10 @@ namespace Logica
                    {
                        cita = per.id_cita,
                        hora = per.hora_cita,
-                       Dia = per.fecha_cita
+                       Dia = per.fecha_cita,
+                       especialidad = per.especialista.especialidad,
+                       entidad = per.especialista.ente_salud.sitio_web,
+                       persona_cita = per.persona.nombre
 
                    }
                    ;
@@ -68,7 +71,7 @@ namespace Logica
             cita citaR = (from per in BD.cita
                                where per.id_cita == id_cita
                                   select per).FirstOrDefault();
-            citaR.id_persona = null;
+            citaR.id_persona = "";
             citaR.estado = "Disponible";
 
             BD.SubmitChanges();
@@ -86,7 +89,8 @@ namespace Logica
                    {
                        cita = per.id_cita,
                        hora = per.hora_cita,
-                       Dia = per.fecha_cita
+                       Dia = per.fecha_cita,
+                       boca = per.especialista.especialidad
 
                    }
                    ;
