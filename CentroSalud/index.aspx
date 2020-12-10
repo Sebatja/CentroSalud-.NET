@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row justify-content-center mt-4 mb-4">
             <div class="col-md-7">
-                Proximamente...
+                <iframe src="Enfermedades.aspx" style="width:100%; height:100%;"></iframe>
             </div>
             <div class="col-md-5">
                 <div class="card">

@@ -1,6 +1,11 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/App.Master" CodeBehind="Login.aspx.cs" Inherits="CentroSalud.WebForm1" %>
 
 <asp:Content ContentPlaceHolderID="lateral" runat="server">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+        </li>
+    </ul>
     <form id="form1" class="d-flex" runat="server">
         <div class="input-group me-2">
             <span class="input-group-text" id="basic-addon1"><i class="far fa-id-card"></i></span>
@@ -15,5 +20,5 @@
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="content" runat="server">
-    <iframe src="index.aspx" style="width:100%; height: 100vh;"></iframe>
+    <iframe src="index.aspx" style="width:100%; height: 50rem;"></iframe>
 </asp:Content>
