@@ -67,21 +67,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CalificarCita.aspx" />
     <Content Include="DashBoardAdmin.aspx" />
     <Content Include="DashboardEnteSalud.aspx" />
     <Content Include="DashboardPersonaComun.aspx" />
     <Content Include="Enfermedades.aspx" />
     <Content Include="Especialistas-Citas.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="mama.aspx" />
     <Content Include="MiscitasEspecialista.aspx" />
     <Content Include="registrar.aspx" />
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />
-    <Content Include="WebForm2.aspx" />
-    <Content Include="WebForm3.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalificarCita.aspx.cs">
+      <DependentUpon>CalificarCita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CalificarCita.aspx.designer.cs">
+      <DependentUpon>CalificarCita.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DashBoardAdmin.aspx.cs">
       <DependentUpon>DashBoardAdmin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -120,13 +125,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="mama.aspx.cs">
-      <DependentUpon>mama.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="mama.aspx.designer.cs">
-      <DependentUpon>mama.aspx</DependentUpon>
-    </Compile>
     <Compile Include="MiscitasEspecialista.aspx.cs">
       <DependentUpon>MiscitasEspecialista.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -148,20 +146,6 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm3.aspx.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm3.aspx.designer.cs">
-      <DependentUpon>WebForm3.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

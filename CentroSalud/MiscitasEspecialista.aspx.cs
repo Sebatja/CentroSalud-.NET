@@ -12,26 +12,34 @@ namespace CentroSalud
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ConsultarEspecialistas();
+            if (!IsPostBack){
+                ConsultarEspecialistas();
+            }
+         
         }
         private void ConsultarEspecialistas()
         {
             ClsCitaDAO citaDAO = new ClsCitaDAO();
-            //2312314
-            //     gvMiscitas.DataSource = citaDAO.MisCitasEspecialista(Session["idPersona"].ToString());
-            int pepe = 2312314;
-            gvMiscitas.DataSource = citaDAO.MisCitasEspecialista(pepe.ToString());
+            gvMiscitas.DataSource = citaDAO.MisCitasEspecialista(Session["idPersona"].ToString());
             gvMiscitas.DataBind();//Monstrar Datos
         }
 
-        protected void gvMiscitas_RowCommand(object sender, GridViewCommandEventArgs e)
+      
+
+        protected void gvMiscitas_RowCommand1(object sender, GridViewCommandEventArgs e)
         {
             GridViewRow filaSeleccionada = (GridViewRow)((Control)e.CommandSource).NamingContainer;
             int rowIndex = filaSeleccionada.RowIndex;
-            if (e.CommandName == "Asignar")
+            if (e.CommandName == "Finalizar")
             {
-
+                ClsCitaDAO citaDao = new ClsCitaDAO();
+                citaDao.FinalidadCita(int.Parse(gvMiscitas.Rows[rowIndex].Cells[1].Text));
             }
+        }
+
+        protected void gvMiscitas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

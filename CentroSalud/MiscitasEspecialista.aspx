@@ -10,11 +10,11 @@
     <form id="form1" runat="server">
         <div>
             <h1>Mis Citas</h1>
-           <asp:GridView ID="gvMiscitas" runat="server" AutoGenerateColumns="False">
+           <asp:GridView ID="gvMiscitas" runat="server" AutoGenerateColumns="False" OnRowCommand="gvMiscitas_RowCommand1" OnSelectedIndexChanged="gvMiscitas_SelectedIndexChanged">
                <Columns>
                    <asp:TemplateField HeaderText="Acciones">
                        <ItemTemplate>
-                           <asp:Button runat="server"  CommandName="Finalizar" ID="btnFinalizar"/>
+                           <asp:Button ID="btnxd" runat="server"  CommandName="Finalizar" />
                        </ItemTemplate>
                    </asp:TemplateField>
                    <asp:BoundField DataField="cita" HeaderText="Cita" />
