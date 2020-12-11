@@ -11,61 +11,43 @@ namespace CentroSalud
 {
 
 
-    public partial class CalificarCita
+    public partial class App
     {
 
         /// <summary>
-        /// Control form1.
+        /// Control head.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
 
         /// <summary>
-        /// Control gdMisCitasParaCalificar.
+        /// Control lateral.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gdMisCitasParaCalificar;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder lateral;
 
         /// <summary>
-        /// Control TextCita.
+        /// Control content.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextCita;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder content;
 
         /// <summary>
-        /// Control TextCalificacion.
+        /// Control script.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextCalificacion;
-
-        /// <summary>
-        /// Control BtnCalificar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnCalificar;
-
-        /// <summary>
-        /// Control misCitas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView misCitas;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder script;
     }
 }

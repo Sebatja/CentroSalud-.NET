@@ -5,3 +5,10 @@ C:\Users\usuario\source\repos\CentroSalud\Logica\obj\Debug\Logica.csprojAssembly
 C:\Users\usuario\source\repos\CentroSalud\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
 C:\Users\usuario\source\repos\CentroSalud\Logica\obj\Debug\Logica.dll
 C:\Users\usuario\source\repos\CentroSalud\Logica\obj\Debug\Logica.pdb
+C:\Users\kesgr\Source\Repos\CentroSalud.NET\Logica\bin\Debug\Logica.dll.config
+C:\Users\kesgr\Source\Repos\CentroSalud.NET\Logica\bin\Debug\Logica.dll
+C:\Users\kesgr\Source\Repos\CentroSalud.NET\Logica\bin\Debug\Logica.pdb
+C:\Users\kesgr\Source\Repos\CentroSalud.NET\Logica\obj\Debug\Logica.csprojAssemblyReference.cache
+C:\Users\kesgr\Source\Repos\CentroSalud.NET\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\kesgr\Source\Repos\CentroSalud.NET\Logica\obj\Debug\Logica.dll
+C:\Users\kesgr\Source\Repos\CentroSalud.NET\Logica\obj\Debug\Logica.pdb

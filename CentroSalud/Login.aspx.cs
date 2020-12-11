@@ -25,7 +25,7 @@ namespace CentroSalud
             if (person.cedula != 0)
             {
                 Session["idPersona"] = person.cedula;
-                Session["nombre"] = person.nombre;
+                Session["nombre"] = person.nombre + " (" + person.apellido + ")";
                 Session["apellido"] = person.apellido;
                 Session["pepe"] = person.nombre;
 
@@ -34,20 +34,24 @@ namespace CentroSalud
                     Session["uno"] = 1;
                     Response.Redirect("DashBoardAdmin.aspx", false);
                 }
-                if (person.id_rol == 2)
+                else if (person.id_rol == 3)
                 {
                     Response.Redirect("DashBoardEnteSalud.aspx", false);
                  
                 }
-                if (person.id_rol == 3)
+                else if (person.id_rol == 2)
                 {
                     Response.Redirect("DashBoardPersonaComun.aspx", false);
+                }                
+                else if(person.id_rol == 4)
+                {
+                    Response.Redirect("DashBoardEspecialista.aspx", false);
                 }
 
             }
             else
             {
-                Page.RegisterStartupScript("script", "<script languaje=JavaScript>alert('Datos incorrectos')</script>");
+                Page.RegisterStartupScript("script", "<script languaje=JavaScript>AlertaPopUp('Datos incorrectos','La información suministrada no concuerda con nuestros registros, por favor valide la información e intente nuevamente.','error');</script>");
             }
         }
     }

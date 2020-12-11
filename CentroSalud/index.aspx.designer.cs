@@ -11,7 +11,7 @@ namespace CentroSalud
 {
 
 
-    public partial class registrar
+    public partial class index
     {
 
         /// <summary>
@@ -87,13 +87,13 @@ namespace CentroSalud
         protected global::System.Web.UI.WebControls.DropDownList TipoDeRol;
 
         /// <summary>
-        /// Control Button4.
+        /// Control Label7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
+        protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
         /// Control TextNIT.
@@ -105,6 +105,15 @@ namespace CentroSalud
         protected global::System.Web.UI.WebControls.TextBox TextNIT;
 
         /// <summary>
+        /// Control Label8.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label8;
+
+        /// <summary>
         /// Control TextRazonSocial.
         /// </summary>
         /// <remarks>
@@ -112,6 +121,15 @@ namespace CentroSalud
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextRazonSocial;
+
+        /// <summary>
+        /// Control Label14.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label14;
 
         /// <summary>
         /// Control TextRepresentante.
@@ -123,6 +141,15 @@ namespace CentroSalud
         protected global::System.Web.UI.WebControls.TextBox TextRepresentante;
 
         /// <summary>
+        /// Control Label9.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label9;
+
+        /// <summary>
         /// Control TextTelefono.
         /// </summary>
         /// <remarks>
@@ -130,6 +157,15 @@ namespace CentroSalud
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextTelefono;
+
+        /// <summary>
+        /// Control Label10.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label10;
 
         /// <summary>
         /// Control TextSitioWeb.
@@ -141,6 +177,15 @@ namespace CentroSalud
         protected global::System.Web.UI.WebControls.TextBox TextSitioWeb;
 
         /// <summary>
+        /// Control Label11.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label11;
+
+        /// <summary>
         /// Control TextCapacidadPacientes.
         /// </summary>
         /// <remarks>
@@ -148,6 +193,15 @@ namespace CentroSalud
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextCapacidadPacientes;
+
+        /// <summary>
+        /// Control Label13.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label13;
 
         /// <summary>
         /// Control ddlCuidad.
@@ -159,13 +213,22 @@ namespace CentroSalud
         protected global::System.Web.UI.WebControls.DropDownList ddlCuidad;
 
         /// <summary>
-        /// Control Button1.
+        /// Control Label15.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Label Label15;
+
+        /// <summary>
+        /// Control Label19.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label19;
 
         /// <summary>
         /// Control ddlCuidadEspecialista.
@@ -177,13 +240,22 @@ namespace CentroSalud
         protected global::System.Web.UI.WebControls.DropDownList ddlCuidadEspecialista;
 
         /// <summary>
-        /// Control ddlEnitdadEspecialista.
+        /// Control Label20.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlEnitdadEspecialista;
+        protected global::System.Web.UI.WebControls.Label Label20;
+
+        /// <summary>
+        /// Control Label17.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label17;
 
         /// <summary>
         /// Control TextEspecialidad.
@@ -195,6 +267,15 @@ namespace CentroSalud
         protected global::System.Web.UI.WebControls.TextBox TextEspecialidad;
 
         /// <summary>
+        /// Control Label18.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label18;
+
+        /// <summary>
         /// Control TextNumeroLicencia.
         /// </summary>
         /// <remarks>
@@ -202,6 +283,15 @@ namespace CentroSalud
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextNumeroLicencia;
+
+        /// <summary>
+        /// Control Label16.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label16;
 
         /// <summary>
         /// Control TextFechaExpedicion.
@@ -213,12 +303,12 @@ namespace CentroSalud
         protected global::System.Web.UI.WebControls.TextBox TextFechaExpedicion;
 
         /// <summary>
-        /// Control Button3.
+        /// Control Button1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

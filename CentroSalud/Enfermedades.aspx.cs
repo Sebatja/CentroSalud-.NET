@@ -12,12 +12,15 @@ namespace CentroSalud
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
             ClsEnfermedadDAO enfermedadDAO = new ClsEnfermedadDAO();
 
             ddlEnfermedad.DataSource = enfermedadDAO.ConsultarTodos();
             ddlEnfermedad.DataValueField = "id_sintoma";
             ddlEnfermedad.DataTextField = "nombre";
             ddlEnfermedad.DataBind();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -28,7 +31,12 @@ namespace CentroSalud
         {
             ClsRecomendacion recomendacionDAO = new ClsRecomendacion();
             GvRecomendacion.DataSource = recomendacionDAO.ConsultarTodos(int.Parse(ddlEnfermedad.SelectedValue.ToString()));
-            GvRecomendacion.DataBind();//Monstrar Datos
+            GvRecomendacion.DataBind();//Mostrar Datos
+        }
+
+        protected void GvRecomendacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

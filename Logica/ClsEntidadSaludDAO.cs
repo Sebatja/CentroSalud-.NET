@@ -19,7 +19,11 @@ namespace Logica
         {
             ORMDataContext BD = new ORMDataContext();
             return from c in BD.ente_salud
-                   select c;
+                   select new
+                   {
+                       nit = c.nit,
+                       razon_social = c.razon_social,
+                   };
         }
     }
 }

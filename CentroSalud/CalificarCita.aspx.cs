@@ -21,9 +21,11 @@ namespace CentroSalud
         private void ConsultarEspecialistas()
         {
             ClsCitaDAO citaDao = new ClsCitaDAO();
-            int pepe = 3131;
-            gdMisCitasParaCalificar.DataSource = citaDao.MisCitasPersona(pepe.ToString());
+            gdMisCitasParaCalificar.DataSource = citaDao.MisCitasPersona(Session["idPersona"].ToString());
             gdMisCitasParaCalificar.DataBind();//Monstrar Datos
+
+            misCitas.DataSource = citaDao.MisCitasPersona(Session["idPersona"].ToString());
+            misCitas.DataBind();
         }
 
         protected void gdMisCitasParaCalificar_RowCommand(object sender, GridViewCommandEventArgs e)

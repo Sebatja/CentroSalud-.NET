@@ -1,157 +1,200 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="registrar.aspx.cs" Inherits="CentroSalud.registrar" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Sites.Master" CodeBehind="registrar.aspx.cs" Inherits="CentroSalud.registrar" %>
 
-<!DOCTYPE html>
+<asp:Content ContentPlaceHolderID="content" runat="server">
+    <div class="container">
+        <form id="form1" runat="server">
+            <div class="row justify-content-center mt-4 mb-4">
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-header">Formulario de registro</div>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <title>Registrar</title>
-</head>
-<body>
-    <style>
-        .entidadSalud{
-            display:none;
-        }
-         .generadorContenido{
-            display:none;
-        }
-        .generadorContenidoVer{
-                  display:none;
-        }
-        .especialista{
-                 display:none;
-        }
-        }
-    </style>
-    <form id="form1" runat="server">
-        <div>
-            <asp:Label ID="Label1" runat="server" Text="Nombre"></asp:Label>
-            <asp:TextBox ID="TextNombre" runat="server"></asp:TextBox>
-           <br />
-            <asp:Label ID="Label2" runat="server" Text="Apellido"></asp:Label>
-            <asp:TextBox ID="TextApellido" runat="server"></asp:TextBox>
-                       <br />
-            <asp:Label ID="Label3" runat="server" Text="Correo"></asp:Label>
-            <asp:TextBox ID="TextCorreo" runat="server"></asp:TextBox>
-                  <br />
-                 <asp:Label ID="Label4" runat="server" Text="Celular"></asp:Label>
-            <asp:TextBox ID="TextCelular" runat="server"></asp:TextBox>
-                    <br />
-              <asp:Label ID="Label6" runat="server" Text="Cedula"></asp:Label>
-            <asp:TextBox ID="TextCedula" runat="server"></asp:TextBox>
-                             <br />
-                    <br />
-             <asp:Label ID="Label5" runat="server" Text="Contraseña"></asp:Label>
-            <asp:TextBox ID="TextPassword" runat="server"></asp:TextBox>
-                             <br />
-              <br />
-              <asp:Label ID="Label12" runat="server" Text="Tipo de Rol"></asp:Label>
-            <asp:DropDownList ID="TipoDeRol" runat="server" onchange="ddlselect();">
-                   <asp:ListItem Value="0">Paciente</asp:ListItem>
-                  <asp:ListItem Value="1">Entidad</asp:ListItem>
-                  <asp:ListItem Value="2">Generador de contenido</asp:ListItem>
-                  <asp:ListItem Value="3">Especialista</asp:ListItem>
-            </asp:DropDownList>
-            <div>
-                
-               
-            <div ID="entidadSalud">
-             <asp:Label ID="Label7" runat="server" Text="NIT" ></asp:Label>
-            <asp:TextBox ID="TextNIT" runat="server"></asp:TextBox>
-                <br />
-                  <asp:Label ID="Label8" runat="server" Text="Razon Social" ></asp:Label>
-            <asp:TextBox ID="TextRazonSocial" runat="server"></asp:TextBox>
-                     <br />
-                 <asp:Label ID="Label14" runat="server" Text="Representante" ></asp:Label>
-            <asp:TextBox ID="TextRepresentante" runat="server"></asp:TextBox>
-                     <br />
-                        <asp:Label ID="Label9" runat="server" Text="Telefono" ></asp:Label>
-            <asp:TextBox ID="TextTelefono" runat="server"></asp:TextBox>
-                    <br />
-                 <asp:Label ID="Label10" runat="server" Text="sitio Web" ></asp:Label>
-            <asp:TextBox ID="TextSitioWeb" runat="server"></asp:TextBox>
-                    <br />
-                 <asp:Label ID="Label11" runat="server" Text="capacidad pacientes" ></asp:Label>
-            <asp:TextBox ID="TextCapacidadPacientes" runat="server"></asp:TextBox>
-                    <br />
-                          <asp:Label ID="Label13" runat="server" Text="Cuidad" ></asp:Label>
-                  <asp:DropDownList ID="ddlCuidad" runat="server"></asp:DropDownList>
-            </div>
-
-              <div ID="GeneradorContenido">
-                   <br />
-                     <asp:Label ID="Label15" runat="server" Text="Entidad de salud" ></asp:Label>
-                  <asp:DropDownList ID="ddlEntidadSalud" runat="server"></asp:DropDownList>
-                  <br />
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon6"><i class="far fa-id-card"></i></span>
+                                    <asp:TextBox ID="TextCedula" runat="server" CssClass="form-control" placeholder="Cédula de ciudadania" aria-describedby="basic-addon6"></asp:TextBox>
+                                </div>
+                            </li>
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-user"></i></span>
+                                    <asp:TextBox ID="TextNombre" CssClass="form-control" placeholder="Nombre" runat="server" aria-describedby="basic-addon1"></asp:TextBox>
+                                    <asp:TextBox ID="TextApellido" CssClass="form-control" placeholder="Apellido" runat="server" aria-describedby="basic-addon1"></asp:TextBox>
+                                </div>
+                            </li>
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon2"><i class="fas fa-at"></i></span>
+                                    <asp:TextBox ID="TextCorreo" runat="server" CssClass="form-control" placeholder="Correo electrónico" aria-describedby="basic-addon2"></asp:TextBox>
+                                </div>
+                            </li>
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon3"><i class="fas fa-mobile-alt"></i></span>
+                                    <asp:TextBox ID="TextCelular" runat="server" CssClass="form-control" placeholder="Celular" aria-describedby="basic-addon3"></asp:TextBox>
+                                </div>
+                            </li>
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon4"><i class="fas fa-lock"></i></span>
+                                    <asp:TextBox ID="TextPassword" type="password" runat="server" CssClass="form-control" placeholder="Contraseña" aria-describedby="basic-addon4"></asp:TextBox>
+                                </div>
+                            </li>
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon5"><i class="fas fa-user-tag"></i></span>
+                                    <asp:DropDownList ID="TipoDeRol" runat="server" aria-describedby="basic-addon5" CssClass="form-control" OnSelectedIndexChanged="TipoDeRol_SelectedIndexChanged">
+                                        <asp:ListItem Value="0" Selected="True">Rol del usuario</asp:ListItem>
+                                        <asp:ListItem Value="1">Paciente</asp:ListItem>
+                                        <asp:ListItem Value="2">Entidad de salud</asp:ListItem>
+                                        <asp:ListItem Value="3">Especialista</asp:ListItem>
+                                    </asp:DropDownList>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="oculto" id="btn-paciente">
+                            <asp:Button CssClass="btn-info btn text-light btn-footer" ID="Button4" runat="server" Text="Registrar" OnClick="Button1_Click" />
+                        </div>
+                    </div>
                 </div>
-                   <div ID="Especialista">
-                   <br />
-                         <asp:Label ID="Label19" runat="server" Text="Cuidad" ></asp:Label>
-                  <asp:DropDownList ID="ddlCuidadEspecialista" runat="server" OnSelectedIndexChanged="ddlCuidadEspecialista_SelectedIndexChanged"></asp:DropDownList>
-                         <br />
-                        <br />
-                       <div class="alert alert-warning" role="alert">
- Recuerde que este especialista podra asociarlo a una entidad o no
-</div>
-                     <asp:Label ID="Label20" runat="server" Text="Entidad de salud" ></asp:Label>
-                       
-                  <asp:DropDownList ID="ddlEnitdadEspecialista" runat="server"></asp:DropDownList>
-                       <br />
+                <div class="col-md-5 oculto" id="secondPart">
+                    <div id="entidadSalud" class="card oculto">
+                        <div class="card-header">Datos de la entidad</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="entidad-1"><i class="fas fa-hashtag"></i></span>
+                                    <asp:TextBox ID="TextNIT" aria-describedby="entidad-1" placeholder="NIT" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                            </li>
 
-                       <asp:Label ID="Label17" runat="server" Text="Especialidad" ></asp:Label>
-                     
-            <asp:TextBox ID="TextEspecialidad" runat="server"></asp:TextBox>
-                       <br />
-                       <br />
-                            <asp:Label ID="Label18" runat="server" Text="Numero de licencia de salud" ></asp:Label>
-            <asp:TextBox ID="TextNumeroLicencia" runat="server" ></asp:TextBox>
-                           <br />
-                     <asp:Label ID="Label16" runat="server" Text="Fecha de expedicion" ></asp:Label>
-            <asp:TextBox ID="TextFechaExpedicion" required runat="server" type="date"></asp:TextBox>
-                 
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="entidad-2"><i class="fas fa-hospital-symbol"></i></span>
+                                    <asp:TextBox ID="TextRazonSocial" aria-describedby="entidad-2" placeholder="Razón social" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="entidad-3"><i class="fas fa-user-tie"></i></span>
+                                    <asp:TextBox ID="TextRepresentante" aria-describedby="entidad-3" placeholder="Representante" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="entidad-4"><i class="fas fa-phone"></i></span>
+                                    <asp:TextBox ID="TextTelefono" aria-describedby="entidad-4" placeholder="Telefono" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="entidad-5"><i class="fas fa-columns"></i></span>
+                                    <asp:TextBox ID="TextSitioWeb" aria-describedby="entidad-5" placeholder="Sitio web" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="entidad-6"><i class="fas fa-hospital-user"></i></span>
+                                    <asp:TextBox ID="TextCapacidadPacientes" aria-describedby="entidad-6" placeholder="Capacidad de pacientes" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                            </li>
+
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="entidad-7"><i class="fas fa-map-marked-alt"></i></span>
+                                    <asp:DropDownList ID="ddlCuidad" aria-describedby="entidad-7" runat="server" CssClass="form-control"></asp:DropDownList>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="">
+                            <asp:Button CssClass="btn-info btn text-light btn-footer" ID="Button1" runat="server" Text="Registrar" OnClick="Button1_Click" />
+                        </div>
+                    </div>
+
+                    <div id="Especialista" class="card oculto">
+                        <div class="card-header">Datos del especialista</div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="alert alert-warning mt-1" role="alert">
+                                    Recuerde que podrá asociarlo luego a una entidad
+                                </div>
+                            </li>
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="espe-1"><i class="fas fa-map-marked-alt"></i></span>
+                                    <asp:DropDownList ID="ddlCuidadEspecialista" OnSelectedIndexChanged="ddlCuidadEspecialista_SelectedIndexChanged" aria-describedby="espe-1" runat="server" CssClass="form-control"></asp:DropDownList>
+                                </div>
+                            </li>
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="espe-2"><i class="fas fa-hospital"></i></span>
+                                    <asp:DropDownList ID="ddlEnitdadEspecialista" OnSelectedIndexChanged="ddlCuidadEspecialista_SelectedIndexChanged" aria-describedby="espe-2" runat="server" CssClass="form-control"></asp:DropDownList>
+                                </div>
+                            </li>
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="espe-3"><i class="fas fa-user-md"></i></span>
+                                    <asp:TextBox ID="TextEspecialidad" aria-describedby="espe-3" placeholder="Especialidad" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                            </li>
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="espe-4"><i class="fas fa-id-card-alt"></i></span>
+                                    <asp:TextBox ID="TextNumeroLicencia" aria-describedby="espe-4" placeholder="Número de licencia de salud" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                            </li>
+                            <li class="list-group-item mt-3">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="espe-5"><i class="fas fa-calendar-check"></i></span>
+                                    <asp:TextBox type="date" ID="TextFechaExpedicion" aria-describedby="espe-5" placeholder="Fecha de expedición" runat="server" CssClass="form-control"></asp:TextBox>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="">
+                            <asp:Button CssClass="btn-info btn text-light btn-footer" ID="Button3" runat="server" Text="Registrar" OnClick="Button1_Click" />
+                        </div>
+
+                    </div>
                 </div>
-            
             </div>
-         
-            
-                             <br />
-            <asp:Button ID="Button1" runat="server" Text="Registrar" OnClick="Button1_Click" />
-        </div>
-    </form>
-</body>
-   
-  <script>
-      var generadorContenido = document.getElementById("GeneradorContenido");
-      var especialista = document.getElementById("Especialista");
-      var pp = document.getElementById("TipoDeRol").value;
-      if (pp == 0) {
-          entidadSalud.classList.add('entidadSalud');
-          generadorContenido.classList.add('generadorContenido');
-          especialista.classList.add('especialista');
-      }
-      function ddlselect() {
-          var rol = document.getElementById("TipoDeRol").value;
-          var entidadSalud = document.getElementById("entidadSalud");
-          var generadorContenido = document.getElementById("GeneradorContenido");
-          var especialista = document.getElementById("Especialista");
-          entidadSalud.classList.add('entidadSalud');
-          generadorContenido.classList.add('generadorContenido');
-          especialista.classList.add('especialista');
-  
-          if (rol == 1) {
-              entidadSalud.classList.remove('entidadSalud');
-          }
-          if (rol == 2) {
-              generadorContenido.classList.remove("generadorContenido");
-          }
-          if (rol == 3) {
-              especialista.classList.remove('especialista');
-          }
-          else {
-          }
-      }
-  </script>
-</html>
+        </form>
+    </div>
+</asp:Content>
+<asp:Content ContentPlaceHolderID="script" runat="server">
 
+    <script>
+
+        window.addEventListener('load', function () {
+            var selectRol = document.getElementById('content_TipoDeRol');
+            var second = document.getElementById('secondPart');
+            var btn = document.getElementById('btn-paciente');
+            var entidad = document.getElementById("entidadSalud");
+            var especialista = document.getElementById("Especialista");
+            selectRol.addEventListener('change', function () {
+                if (selectRol.value != 0) {
+                    if (selectRol.value == 1) {
+                        btn.classList.remove('oculto');
+                        second.classList.add('oculto');
+                    } else {
+                        btn.classList.add('oculto');
+                        second.classList.remove('oculto');
+                        if (selectRol.value == 2) {
+                            entidad.classList.remove('oculto');
+                            especialista.classList.add('oculto');
+                        }  else if (selectRol.value == 3) {
+                            entidad.classList.add('oculto');
+                            especialista.classList.remove('oculto');
+                        }
+                    }
+                } else {
+                    btn.classList.add('oculto');
+                    second.classList.add('oculto');
+                }
+            });
+        });
+    </script>
+</asp:Content>

@@ -86,7 +86,10 @@ namespace Logica
                    {
                        cita = per.id_cita,
                        hora = per.hora_cita,
-                       Dia = per.fecha_cita
+                       Dia = per.fecha_cita,
+                       cal = per.calificacion,
+                       esp = per.especialista.especialidad,
+                       nomb = per.especialista.ente_salud.razon_social,
 
                    }
                    ;

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/App.Master" CodeBehind="DashboardEnteSalud.aspx.cs" Inherits="CentroSalud.DashboardEnteSalud" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/App.Master" CodeBehind="DashboardEspecialista.aspx.cs" Inherits="CentroSalud.DashboardEspecialista" %>
 
 <asp:Content ContentPlaceHolderID="lateral" runat="server">
 
@@ -18,3 +18,5 @@
 <asp:Content ContentPlaceHolderID="content" runat="server">
     <iframe src="MiscitasEspecialista.aspx" name="patient" style="width:100%; height: 50rem;"></iframe>
 </asp:Content>
+
+

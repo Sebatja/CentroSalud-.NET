@@ -1,28 +1,32 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MiscitasEspecialista.aspx.cs" Inherits="CentroSalud.MiscitasEspecialista" %>
-<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Sites.Master" CodeBehind="MiscitasEspecialista.aspx.cs" Inherits="CentroSalud.MiscitasEspecialista" %>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <h1>Mis Citas</h1>
-           <asp:GridView ID="gvMiscitas" runat="server" AutoGenerateColumns="False" OnRowCommand="gvMiscitas_RowCommand1" OnSelectedIndexChanged="gvMiscitas_SelectedIndexChanged">
-               <Columns>
-                   <asp:TemplateField HeaderText="Acciones">
-                       <ItemTemplate>
-                           <asp:Button ID="btnxd" runat="server"  CommandName="Finalizar" />
-                       </ItemTemplate>
-                   </asp:TemplateField>
-                   <asp:BoundField DataField="cita" HeaderText="Cita" />
-                   <asp:BoundField DataField="hora" HeaderText="Hora" />
-                   <asp:BoundField DataField="Dia" HeaderText="Dia" />
-               </Columns>
-            </asp:GridView>
+<asp:Content runat="server" ContentPlaceHolderID="content">
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <form id="form1" runat="server">
+                    <div class="card">
+                        <div class="card-header">
+                            Mis citas
+                        </div>
+                        <div class="card-body">
+                            <asp:GridView CssClass="table" ID="gvMiscitas" runat="server" AutoGenerateColumns="False" OnRowCommand="gvMiscitas_RowCommand1" OnSelectedIndexChanged="gvMiscitas_SelectedIndexChanged">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Acciones">
+                                        <ItemTemplate>
+                                            <asp:Button ID="btnxd" Text="Finalizar" CssClass="btn btn-info text-light" runat="server" CommandName="Finalizar" />
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:BoundField DataField="cita" HeaderText="Cita" />
+                                    <asp:BoundField DataField="hora" HeaderText="Hora" />
+                                    <asp:BoundField DataField="Dia" HeaderText="Dia" />
+                                </Columns>
+                            </asp:GridView>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-    </form>
-</body>
-</html>
+    </div>
+
+</asp:Content>

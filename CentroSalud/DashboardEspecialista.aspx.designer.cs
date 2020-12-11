@@ -11,7 +11,7 @@ namespace CentroSalud
 {
 
 
-    public partial class DashboardPersonaComun
+    public partial class DashboardEspecialista
     {
 
         /// <summary>

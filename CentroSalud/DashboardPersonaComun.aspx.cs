@@ -11,7 +11,7 @@ namespace CentroSalud
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            LblBienvenido.Text = "Bienvenido " + Session["nombre"];
         }
     }
 }
