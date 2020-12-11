@@ -30,5 +30,10 @@ namespace CentroSalud
             GvRecomendacion.DataSource = recomendacionDAO.ConsultarTodos(int.Parse(ddlEnfermedad.SelectedValue.ToString()));
             GvRecomendacion.DataBind();//Monstrar Datos
         }
+
+        protected void GvRecomendacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

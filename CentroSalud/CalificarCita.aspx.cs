@@ -22,7 +22,7 @@ namespace CentroSalud
         {
             ClsCitaDAO citaDao = new ClsCitaDAO();
             int pepe = 3131;
-            gdMisCitasParaCalificar.DataSource = citaDao.MisCitasPersona(pepe.ToString());
+            gdMisCitasParaCalificar.DataSource = citaDao.MisCitasPersona(Session["idPersona"].ToString());
             gdMisCitasParaCalificar.DataBind();//Monstrar Datos
         }
 

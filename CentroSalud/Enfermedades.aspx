@@ -16,7 +16,7 @@
             <asp:Button ID="Button1" runat="server" Text="Buscar Recomendacion" OnClick="Button1_Click" />
             
             
-            <asp:GridView ID="GvRecomendacion" runat="server"></asp:GridView>
+            <asp:GridView ID="GvRecomendacion" runat="server" OnSelectedIndexChanged="GvRecomendacion_SelectedIndexChanged"></asp:GridView>
         </div>
     </form>
 </body>

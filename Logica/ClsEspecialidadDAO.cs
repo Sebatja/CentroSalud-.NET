@@ -42,5 +42,15 @@ namespace Logica
             return from c in BD.especialista
                    select c;
         }
+        public Object ConsultarEspecialistaEntesalud(int entesalud)
+        {
+            ORMDataContext BD = new ORMDataContext();
+            return from per in BD.especialista
+
+                   where per.id_ente_salud == entesalud
+                   select per;
+                   ;
+
+        }
     }
 }

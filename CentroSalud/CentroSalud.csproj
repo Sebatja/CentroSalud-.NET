@@ -76,6 +76,8 @@
     <Content Include="Global.asax" />
     <Content Include="MiscitasEspecialista.aspx" />
     <Content Include="registrar.aspx" />
+    <Content Include="RegistrarCita.aspx" />
+    <Content Include="RegistrasionCitasuwu.aspx" />
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />
   </ItemGroup>
@@ -146,6 +148,20 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrarCita.aspx.cs">
+      <DependentUpon>RegistrarCita.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrarCita.aspx.designer.cs">
+      <DependentUpon>RegistrarCita.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrasionCitasuwu.aspx.cs">
+      <DependentUpon>RegistrasionCitasuwu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrasionCitasuwu.aspx.designer.cs">
+      <DependentUpon>RegistrasionCitasuwu.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -109,6 +109,13 @@ namespace Logica
 
 
         }
+        public void RegistrarCita(cita citica)
+        {
+            ORMDataContext BD = new ORMDataContext();
+            BD.cita.InsertOnSubmit(citica);
+            BD.SubmitChanges();
+
+        }
 
     }
 
